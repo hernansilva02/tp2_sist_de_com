@@ -1,0 +1,631 @@
+\documentclass[11pt,a4paper]{article}
+
+% =========================
+% Paquetes
+% =========================
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgheros}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\DeclareSIUnit{\belmilliwatt}{Bm}
+\DeclareSIUnit{\dBm}{\deci\belmilliwatt}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{tabularx}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\geometry{%
+    margin=2.5cm
+}
+\sisetup{
+    output-decimal-marker={,},
+    per-mode=symbol,
+    mode=match,
+    text-font-command=\sffamily,
+    unit-font-command=\mathrm,
+    propagate-math-font=false,
+    reset-math-version=true
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% =========================
+% Datos del documento
+% =========================
+\title{\textbf{TP N.º 2 -- Unidades Utilizadas en las Telecomunicaciones}}
+\author{}
+\date{}
+
+\begin{document}
+\input{caratula}
+
+\maketitle
+
+% =====================================================
+\section*{1. Calcular la ganancia en dB de un amplificador en el cual se duplica la potencia
+de salida con respecto a la potencia de entrada}
+La forma de expresar la ganancia en dB para la potencia está dada por la relación
+\begin{equation}
+    P(dB) = 10\log_{10} \left( \frac{P_{out}}{P_{in}}\right)
+\end{equation}
+Debido a que el amplificador entrega a la salida el doble de potencia que en la entrada
+
+\[
+   \begin{gathered} 
+       P_{out} = 2 P_{in} \\
+       P(dB) = 10\log_{10} \left( \frac{2P_{in}}{P_{in}}\right) \\
+       \boxed{P(dB) = \SI{3{,}010}{\decibel}\approxeq \SI{3}{\decibel}}
+   \end{gathered} 
+\]
+
+% =====================================================
+\section*{2. Tenemos un canal con una atenuación de 10 dB. ¿Cuál es la potencia de salida
+(dBm y W) de la señal al final del canal, si la potencia de entrada son 5 W? }
+
+
+\subsection*{Cálculo en dBm}
+La unidad dBm hace referencia a la relación entre la potencia y
+\SI{1}{\milli\watt}. Para \SI{5}{\watt}, es decir \SI{5000}{\milli\watt}, de potencia de
+entrada
+
+\begin{equation}
+    P(dBm) = 10\log_{10} \left( \frac{P}{\SI{1}{\milli\watt}}\right)
+    \label{eq:dbm}
+\end{equation}
+
+\[
+   \begin{gathered} 
+       P_{in}(dBm) = 10\log_{10} \left(
+       \frac{\SI{5000}{\milli\watt}}{\SI{1}{\milli\watt}}\right) \\
+       P_{in}(dBm) = \SI{36{,}99}{\dBm} \approxeq \SI{37}{\dBm}
+   \end{gathered} 
+\]
+Debido a que el canal posee una atenuación de \SI{10}{\decibel}
+\[
+   \begin{gathered} 
+       P_{out}(dBm) = \SI{37}{\dBm} - \SI{10}{\decibel} \\
+       \boxed{P_{out}(dBm) = \SI{27}{\dBm}}
+   \end{gathered} 
+\]
+
+\newpage
+\subsection*{Cálculo en W}
+Si despejamos la variable P de la ecuación~\eqref{eq:dbm}
+\[
+        \frac{P(dBm)}{10} = \log_{10} \left(\frac{P}{\SI{1}{\milli\watt}}\right)\\[5mm]
+\]
+\begin{equation}
+    P = 10^{\frac{dBm}{10}}\ [mW]
+    \label{eq:dbMtoP}
+\end{equation}
+
+Sustituyendo dBm en \eqref{eq:dbMtoP}
+
+\[
+    \begin{gathered}
+        P_{out} = 10^{\frac{27}{10}} \\
+        \boxed{P_{out} = \SI{501{,}19}{\milli\watt}}
+    \end{gathered}
+\]
+
+% =====================================================
+\section*{3. Calcular la potencia en dBm de un amplificador cuya salida es de 400 mW}
+Utilizando la expresión \eqref{eq:dbm}
+\[
+    \begin{gathered}
+        P_{out}(dBm) = 10 \log_{10} \left(\frac{\SI{400}{\milli\watt}}{\SI{1}{\milli\watt}}\right) \\
+        \boxed{P_{out}(dBm) = \SI{26{,}02}{\dBm}}
+    \end{gathered}
+\]
+
+% =====================================================
+\section*{4. Calcular la potencia de entrada del amplificador del problema anterior (dBm),
+sabiendo que su ganancia es de 20 dB}
+Debido a que la ganancia del amplificador del punto anterior es \SI{20}{\decibel}, la
+potencia de entrada será
+
+\[
+    \begin{gathered}
+        P_{in}(dBm) = P_{out}(dBm) - \SI{20}{\decibel} \\
+        P_{in}(dBm) = \SI{26{,}02}{\dBm} - \SI{20}{\decibel} \\
+        \boxed{P_{in}(dBm) = \SI{6{,}02}{\dBm}}
+    \end{gathered}
+\]
+
+% =====================================================
+\section*{5. Para el mismo amplificador si la potencia de entrada es de 1 W, calcular la
+potencia de salida en dBW y dBm}
+\begin{itemize}
+    \item \underline{Cálculo en dBW}
+
+        \vspace{2mm}
+La unidad dBW es la relación logarítmica entre la potencia del sistema y \SI{1}{\watt},
+de esta forma se obtiene
+\begin{equation}
+    P(dBW) = 10 \log_{10} \left(\frac{P(W)}{\SI{1}{\watt}}\right)
+    \label{eq:dbw}
+\end{equation}
+
+Por lo tanto, reemplazando una potencia de \SI{1}{\watt} en \eqref{eq:dbw}
+
+\[
+    \begin{gathered}
+        P_{in}(dBW) = 10 \log{10} \left(\frac{\SI{1}{\watt}}{\SI{1}{\watt}}\right) \\
+        P_{in}(dBW) = \SI{0}{\decibel\watt}
+    \end{gathered}
+\]
+
+Si el amplificador tiene una ganancia de \SI{20}{\decibel}, entonces
+
+\[
+    \boxed{P_{out}(dBW) = \SI{20}{\decibel\watt}}
+\]
+
+\item \underline{Cálculo en dBm}
+
+    \vspace{2mm}
+    La potencia de entrada en dBm es
+    \[
+        \begin{gathered}
+            P_{in}(dBm) = 10 \log{10} \left(\frac{\SI{1000}{\milli\watt}}{\SI{1}{\milli\watt}}\right) \\
+            P_{in}(dBm) = \SI{30}{\dBm}
+        \end{gathered}
+    \]
+    
+    Por lo tanto a la salida del amplificador
+    \[
+        \begin{gathered}
+            P_{out}(dBm) = \SI{30}{\dBm} + \SI{20}{\decibel} \\
+            \boxed{P_{out}(dBm) = \SI{50}{\dBm}}
+        \end{gathered}
+    \]
+
+\end{itemize}
+
+% =====================================================
+\section*{6. Longitud de onda electromagnética y sonora}
+
+La relación general entre velocidad, frecuencia y longitud de onda es:
+
+\[
+\lambda=\frac{v_p}{f}
+\]
+
+Para una onda electromagnética en aire o vacío:
+
+\[
+v_p=c=3\cdot10^8\ \si{m/s}
+\]
+
+Entonces:
+
+\[
+\lambda_{\text{EM}}=\frac{c}{f}
+\]
+
+Para una onda sonora en aire:
+
+\[
+v_{\text{sonido}}\approx \SI{343}{m/s}
+\]
+
+Entonces:
+
+\[
+\lambda_{\text{sonora}}=\frac{v_{\text{sonido}}}{f}
+\]
+
+Al tener una frecuencia
+
+\[
+f=\SI{50}{kHz}
+\]
+
+\subsection*{\textbf{a) Longitud de onda}}
+
+\[
+    \lambda_{\text{EM}}=\frac{3\cdot10^8}{\SI{50}{\kilo\hertz}}
+\]
+
+\[
+    \boxed{\lambda_{\text{EM}}=\SI{6}{\kilo\meter}}
+\]
+
+\subsection*{\textbf{b) Longitud de onda de una onda sonara}}
+Para una onda sonora, la velocidad de propagación no es la velocidad de la luz
+\[
+    v_p = \SI{343}{\meter\per\second}
+\]
+
+\[
+    \lambda_{\text{sonora}}=\frac{\SI{343}{\meter\per\second}}{\SI{50}{\kilo\hertz}}
+\]
+
+\[
+    \boxed{\lambda_{\text{sonora}}=\SI{6,86}{\milli\meter}}
+\]
+
+% =====================================================
+\section*{7. Espectro visible en aire y agua}
+
+El espectro visible en aire se considera comprendido entre:
+
+\[
+\lambda_{\text{violeta}}=\SI{380}{nm}
+\]
+
+y
+
+\[
+\lambda_{\text{rojo}}=\SI{780}{nm}
+\]
+
+\subsection*{a) Frecuencias extremas}
+
+Se usa:
+
+\[
+f=\frac{c}{\lambda}
+\]
+
+con:
+
+\[
+c=3\cdot10^8\ \si{m/s}
+\]
+
+Conversión de unidades:
+
+\[
+\SI{380}{nm}=380\cdot10^{-9}\ \si{m}
+\]
+
+\[
+\SI{780}{nm}=780\cdot10^{-9}\ \si{m}
+\]
+
+Para el violeta:
+
+\[
+f_{\text{violeta}}=\frac{3\cdot10^8}{380\cdot10^{-9}}
+\]
+
+\[
+\boxed{f_{\text{violeta}}\approx 7{,}89\cdot10^{14}\ \si{Hz}}
+\]
+
+Para el rojo:
+
+\[
+f_{\text{rojo}}=\frac{3\cdot10^8}{780\cdot10^{-9}}
+\]
+
+\[
+\boxed{f_{\text{rojo}}\approx 3{,}85\cdot10^{14}\ \si{Hz}}
+\]
+
+La radiación violeta tiene mayor frecuencia porque posee menor longitud de onda.
+
+En el mismo medio, ambas radiaciones se propagan a la misma velocidad. En aire se aproxima:
+
+\[
+v\approx c=3\cdot10^8\ \si{m/s}
+\]
+
+Por lo tanto, ninguna se propaga más rápido que la otra en el aire.
+
+\subsection*{b) Longitudes de onda en agua}
+
+El índice de refracción está dado por:
+
+\[
+n=\frac{c}{v}
+\]
+
+Al pasar de aire a agua, la frecuencia se mantiene constante, pero cambia la velocidad y por lo tanto cambia la longitud de onda.
+
+La longitud de onda en agua es:
+
+\[
+\lambda_{\text{agua}}=\frac{\lambda_{\text{aire}}}{n}
+\]
+
+Con:
+
+\[
+n=\frac{4}{3}
+\]
+
+entonces:
+
+\[
+\lambda_{\text{agua}}=\lambda_{\text{aire}}\cdot\frac{3}{4}
+\]
+
+Para el violeta:
+
+\[
+\lambda_{\text{violeta,agua}}=380\cdot\frac{3}{4}
+\]
+
+\[
+\boxed{\lambda_{\text{violeta,agua}}=\SI{285}{nm}}
+\]
+
+Para el rojo:
+
+\[
+\lambda_{\text{rojo,agua}}=780\cdot\frac{3}{4}
+\]
+
+\[
+\boxed{\lambda_{\text{rojo,agua}}=\SI{585}{nm}}
+\]
+
+Por lo tanto, en agua el intervalo de longitudes de onda queda:
+
+\[
+\boxed{\SI{285}{nm}\leq \lambda_{\text{agua}}\leq \SI{585}{nm}}
+\]
+
+% =====================================================
+\section*{8. Longitudes de onda para distintas bandas}
+
+Se usa:
+
+\[
+\lambda=\frac{c}{f}
+\]
+
+con:
+
+\[
+c=3\cdot10^8\ \si{m/s}
+\]
+
+Formas prácticas:
+
+\[
+\lambda[\text{m}]=\frac{300}{f[\text{MHz}]}
+\]
+
+\[
+\lambda[\text{m}]=\frac{0{,}3}{f[\text{GHz}]}
+\]
+
+\newpage
+
+\renewcommand{\arraystretch}{1.25}%
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{5.2cm} >{\raggedleft\arraybackslash}p{3.1cm} >{\raggedleft\arraybackslash}p{4cm}}
+\toprule
+\textbf{Servicio / banda} & \textbf{Frecuencia} & \textbf{Longitud de onda \(\lambda\)} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Servicio / banda} & \textbf{Frecuencia} & \textbf{Longitud de onda \(\lambda\)} \\
+\midrule
+\endhead
+
+Caso inicial & \SI{1}{kHz} & \SI{300000}{m} = \SI{300}{km} \\
+
+AM, extremo inferior & \SI{530}{kHz} & \SI{566,04}{m} \\
+
+AM, extremo superior & \SI{1625}{kHz} & \SI{184,62}{m} \\
+
+FM, extremo inferior & \SI{88}{MHz} & \SI{3,41}{m} \\
+
+FM, extremo superior & \SI{108}{MHz} & \SI{2,78}{m} \\
+
+Telefonía celular & \SI{700}{MHz} & \SI{0,429}{m} = \SI{42,9}{cm} \\
+
+Telefonía celular & \SI{800}{MHz} & \SI{0,375}{m} = \SI{37,5}{cm} \\
+
+Telefonía celular & \SI{1700}{MHz} & \SI{0,176}{m} = \SI{17,6}{cm} \\
+
+Telefonía celular & \SI{1900}{MHz} & \SI{0,158}{m} = \SI{15,8}{cm} \\
+
+WiFi & \SI{5}{GHz} & \SI{0,060}{m} = \SI{6,0}{cm} \\
+
+WiFi 6E, extremo inferior & \SI{5925}{MHz} & \SI{0,0506}{m} = \SI{5,06}{cm} \\
+
+WiFi 6E, extremo superior & \SI{7125}{MHz} & \SI{0,0421}{m} = \SI{4,21}{cm} \\
+
+Bluetooth & \SI{2,4}{GHz} & \SI{0,125}{m} = \SI{12,5}{cm} \\
+
+Radioenlace digital & \SI{15}{GHz} & \SI{0,020}{m} = \SI{2,0}{cm} \\
+
+Radioenlace digital & \SI{18}{GHz} & \SI{0,0167}{m} = \SI{1,67}{cm} \\
+
+Radioenlace digital & \SI{23}{GHz} & \SI{0,0130}{m} = \SI{1,30}{cm} \\
+
+Satélite banda C & \SI{4}{GHz} & \SI{0,075}{m} = \SI{7,5}{cm} \\
+
+Satélite banda C & \SI{6}{GHz} & \SI{0,050}{m} = \SI{5,0}{cm} \\
+
+TV satelital banda Ku & \SI{11}{GHz} & \SI{0,0273}{m} = \SI{2,73}{cm} \\
+
+TV satelital banda Ku & \SI{14}{GHz} & \SI{0,0214}{m} = \SI{2,14}{cm} \\
+
+Internet satelital banda Ka & \SI{20}{GHz} & \SI{0,015}{m} = \SI{1,5}{cm} \\
+
+Internet satelital banda Ka & \SI{30}{GHz} & \SI{0,010}{m} = \SI{1,0}{cm} \\
+
+Radioenlace entre radiobases & \SI{80}{GHz} & \SI{0,00375}{m} = \SI{3,75}{mm} \\
+
+\bottomrule
+\end{longtable}
+
+\subsection*{Conclusión del punto 8}
+
+A medida que aumenta la frecuencia, disminuye la longitud de onda. Por eso, las antenas de sistemas de alta frecuencia, como WiFi, enlaces satelitales o radioenlaces de microondas, pueden ser físicamente mucho más pequeñas que las utilizadas en bandas bajas como AM.
+
+\newpage
+
+% =====================================================
+\section*{9. Radiaciones no ionizantes}
+
+Las radiaciones no ionizantes son aquellas radiaciones del espectro electromagnético que poseen un nivel de energía incapaz de romper enlaces atómicos.
+
+Los valores máximos de energía ionizante dependen de la frecuencia con la que se trabaja:
+
+\begin{itemize}
+    \item \textbf{Frecuencias entre 1 Hz y 100 kHz:} se regula el nivel de densidad de corriente eléctrica para evitar efectos sobre el sistema nervioso. No se producen efectos térmicos.
+    \item \textbf{Frecuencias entre 100 kHz y 10 GHz:} en este rango de frecuencias, los tejidos experimentan calentamiento. Se utiliza una tasa para medir la potencia máxima que experimenta un tejido cuando absorbe un campo electromagnético de frecuencia, llamada SAR. Su unidad es \si{W/kg} y la Unión Europea admite como valor límite \SI{2}{W/kg}.
+    \item \textbf{Frecuencias superiores a 10 GHz:} para estos valores se utiliza un parámetro que expresa la densidad de potencia electromagnética, llamado \(S\). Su unidad es \si{W/m^2} y los valores máximos indicados por la ICNIRP (Comisión Internacional de Protección contra las Radiaciones No Ionizantes) son \SI{10}{W/m^2} para el público general y \SI{50}{W/m^2} para la exposición laboral.
+\end{itemize}
+
+% =====================================================
+\newpage
+\section*{10. Bandas no licenciadas}
+
+Las bandas no licenciadas son porciones del espectro radioeléctrico que pueden ser utilizadas por múltiples usuarios sin necesidad de obtener una licencia para cada transmisor o estación. Se encuentran administradas por el ENACOM (Ente Nacional de Comunicaciones).
+
+El ente que asigna bandas a servicios es el CABFRA; para las bandas no licenciadas, el organismo menciona los siguientes servicios:
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{7.2cm} >{\raggedright\arraybackslash}p{5.8cm}}
+\toprule
+\textbf{Servicio} & \textbf{Rango de frecuencias} \\
+\midrule
+\endfirsthead
+\endhead
+
+Servicios TIC & \SIrange{915}{928}{MHz}\newline \SIrange{2400}{2483,5}{MHz}\newline \SIrange{5150}{5250}{MHz}\newline \SIrange{5250}{5350}{MHz}\newline \SIrange{5470}{5600}{MHz}\newline \SIrange{5650}{5725}{MHz}\newline \SIrange{5725}{5850}{MHz}\newline \SIrange{57}{71}{GHz}.\newline \textit{Nota: son servicios vinculados a Tecnologías de la Información y las Comunicaciones, por ejemplo WiFi, Bluetooth y LoRaWAN.} \\
+
+Servicio de Aficionados por Satélite (SAFS) & \SIrange{2400}{2450}{MHz}. \\
+
+Servicio Fijo por Satélite (SFS) & \SIrange{5150}{5250}{MHz}\newline \SIrange{5825}{5850}{MHz}. \\
+
+Sistemas de Baja Potencia (SBP) & \SIrange{5150}{5850}{MHz}. \\
+
+Servicio de Radionavegación Aeronáutica (SRNA) & \SIrange{5150}{5250}{MHz}. \\
+
+Servicio de Radionavegación Marítima (SRNM) & \SIrange{5570}{5650}{MHz}. \\
+
+Servicio de Radiolocalización & \SIrange{5600}{5650}{MHz}. \\
+
+Servicio de Aficionados (SAF) & \SIrange{5650}{5850}{MHz}. \\
+
+Servicio Entre Satélites (SES) & \SIrange{64}{71}{GHz}. \\
+
+Servicio de Exploración de la Tierra por Satélite (SETS) & \SIrange{65}{66}{GHz}. \\
+
+Servicio de Investigación Espacial (SIE) & \SIrange{65}{66}{GHz}. \\
+
+Servicio Móvil por Satélite (SMS) & \SIrange{66}{71}{GHz}. \\
+
+Servicio de Radionavegación (SRN) & \SIrange{66}{71}{GHz}. \\
+
+Servicio de Radionavegación por Satélite (SRNS) & \SIrange{66}{71}{GHz}. \\
+
+\bottomrule
+\end{longtable}
+
+\newpage
+\section*{11. Pérdidas en el espacio libre}
+\subsection*{Escenario A: Tecnología 4G LTE}
+
+\noindent Utilizando la fórmula general de pérdidas en el espacio libre\\
+\[
+L_{p}\ =\ 20\log_{10}(d)\ +\ 20\log_{10}(f) +\ 20\log_{10}(\frac{4\pi}{c})
+\]
+{
+    \sisetup{
+        detect-family=true,
+        mode=text
+    }
+    
+    Se tiene para los datos $d\ =\ \SI{1500}{\meter}$ ~y ~$f\ =\ \SI{700}{\mega\hertz}$
+}
+\[
+    L_{p}\ =\ 20\log_{10}(1,5)\ +\ 20\log_{10}(700) +\ 32,44
+\]
+\[
+    \boxed{L_{p}\ =\ \SI{92,86}{\decibel}}
+\]
+
+\subsection*{Escenario B: Tecnología 5G}
+{
+    \sisetup{%
+        detect-family=true,
+        mode=text
+    }
+    
+    Se tiene para los datos $d\ =\ \textsf{\SI{1500}{\meter}}$ ~y ~$f\ =\ \SI{3,5}{\giga\hertz}$
+}
+
+\[
+    L_{p}\ =\ 20\log_{10}(1,5)\ +\ 20\log_{10}(3,5) +\ 92,4
+\]
+\[
+    \boxed{L_{p}\ =\ \SI{106,84}{\decibel}}
+\]
+
+\section*{12. Intensidad de campo eléctrico}
+El campo eléctrico que irradia una antena se relaciona con la potencia transmitida mediante la relación
+
+\[
+    E\ = \frac{\sqrt{30P}}{d}
+\]
+
+donde $P$~es la potencia transmitida y $d$~es la distancia desde la antena hasta el punto a analizar.
+\\
+\\
+{\sisetup{detect-family=true,mode=text} Para una antena que transmite una potencia $P = \SI{320}{\watt}$ con un tilt de $\mathsf{6^\circ}$, a $\SI{25}{\meter}$ de altura y una distancia horizontal $d\ =\ \SI{200}{\meter}$}
+\begin{itemize}
+    \item \textbf{Intensidad de campo eléctrico justo debajo de la antena}\\
+        \\
+        Al reducirse en un 99\% la potencia irradiada en dirección vertical, justo debajo de la antena se tiene\\
+        \[
+        \begin{gathered}
+            P_{debajo} = \SI{320}{\watt} \cdot 0,01\\
+            P_{debajo} = \SI{3{,}2}{\watt}
+        \end{gathered}
+        \]
+        Volviendo a aplicar la ecuación mencionada
+        \[
+            \begin{gathered}
+                E\ = \frac{\sqrt{30\cdot \SI{3{,}2}{\watt}}}{\SI{25}{\meter}}\\
+                \boxed{E\ = \SI{0{,}392}{\volt\per\meter}}
+            \end{gathered}
+        \]
+        \newpage
+    \item \textbf{Intensidad de campo eléctrico donde el haz principal toca el suelo}\\
+        \\
+        La distancia desde la antena a este punto está dada por la relación de Pitágoras
+
+        \[
+            d\ =\ \sqrt{(\SI{25}{\meter})^{2}\ +\ (\SI{200}{\meter})^{2}}
+        \]
+        \[
+            d\ =\ \SI{201,55}{\meter}
+        \]
+        Entonces, aplicando nuevamente la fórmula anterior
+        \[
+            E\ = \frac{\sqrt{\SI{30}{\ohm}\cdot \SI{320}{\watt}}}{\SI{201,55}{\meter}}
+        \]
+        \[
+            \boxed{E\ = \SI{0,48}{\frac{\volt}{\meter}}}
+        \]
+
+
+\end{itemize}
+\end{document}
