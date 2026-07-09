@@ -375,10 +375,19 @@ Esto indica que
 Aplicando la ecuación \eqref{eq:dbmToW}
 \[
     \begin{gathered}
-        P_{min}(W) = 10^{\frac{\SI{-0{,}4}{\dBm} - 30}{10}} \\
-        \boxed{P_{min}(W) = \SI{0{,}912}{\milli\watt}}
+        P_{mintx}(W) = 10^{\frac{\SI{-0{,}4}{\dBm} - 30}{10}} \\
+        \boxed{P_{mintx}(W) = \SI{0{,}912}{\milli\watt}}
     \end{gathered}
 \]
+
+La potencia mínima del receptor está dada por su sensibilidad
+\[
+    \begin{gathered}
+        P_{minrx}(W) = 10^{\frac{\SI{-10}{\dBm} - 30}{10}} \\
+        \boxed{P_{minrx}(W) = \SI{0{,}1}{\milli\watt}}
+    \end{gathered}
+\]
+
 %====================================
 \section*{10. En base al ejercicio anterior indicar la ganancia de un amplificador que se
 debería colocar a mitad de camino entre el transmisor y el receptor si se desea

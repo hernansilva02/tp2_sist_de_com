@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1782852607.04196 "informe_tp2.tex" "informe_tp2.pdf" "informe_tp2" 1782852608.96086 0
+["lualatex"] 1783566613.72597 "informe_tp2.tex" "informe_tp2.pdf" "informe_tp2" 1783566615.4956 0
   "/home/hernan/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc" 1763963411.09375 128405 8efd8d82e21fb12232d020a8c2d685d7 ""
   "/home/hernan/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1763963408.45272 127322 7b3ec560cedc6cf6328543c6b83749ed ""
   "/home/hernan/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1763963408.88673 127665 e856b50f00b75da5ea516913e4088ea2 ""
@@ -185,9 +185,9 @@
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1776114075 11873776 ad1a4b1a2adad44a414174108a12ef0b ""
   "caratula.tex" 1782700395.12591 2093 86b682271d839df4490b3a77569f41e0 ""
   "esquematico_pto7.pdf" 1782798133.37507 27415 639fe6c2806e595084b9442f1f7ad199 ""
-  "informe_tp2.aux" 1782852608.66752 1117 9d05442a2e75e00f68608cee594d553c "lualatex"
-  "informe_tp2.out" 1782852608.2916 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "informe_tp2.tex" 1782852606.31499 13657 329d8b588a0fba609a4e27a001e32d4f ""
+  "informe_tp2.aux" 1783566615.24572 1117 9d05442a2e75e00f68608cee594d553c "lualatex"
+  "informe_tp2.out" 1783566614.89849 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "informe_tp2.tex" 1783566612.30589 13890 8d43c67c05e7340f2c017571a92318de ""
   "utn_logo.png" 1782687597.86851 2791 625497838bd0ea9e905be52a726beaa9 ""
   (generated)
   "informe_tp2.aux"
