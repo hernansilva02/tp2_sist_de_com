@@ -362,7 +362,7 @@ de \SI{1000}{\metre}
 \[
     \begin{gathered}
         Perdidas = \SI{0{,}8}{\decibel} \cdot 12 \\
-        Perdidas = \SI{-9{,}6}{\decibel}
+        Perdidas = \SI{9{,}6}{\decibel}
     \end{gathered}
 \]
 Esto indica que
@@ -392,10 +392,74 @@ La potencia mínima del receptor está dada por su sensibilidad
 \section*{10. En base al ejercicio anterior indicar la ganancia de un amplificador que se
 debería colocar a mitad de camino entre el transmisor y el receptor si se desea
 cambiar este último por otro de sensibilidad 100 veces menor}
+Si la nueva sensibilidad del receptor es 100 veces menor, esto se traduce en dB como
+\[
+    \begin{gathered}
+        G(dB) = 10\log_{10} (100) \\
+        G(dB) = \SI{20}{\decibel}
+    \end{gathered}
+\]
+
+Quiere decir que la nueva sensibilidad en expresada en dBm es
+\[
+    \begin{gathered}
+        P_{minrx}(dBm)' = P_{minrx}(dBm) - G(dB) \\
+        P_{minrx}(dBm)' = \SI{-10}{\dBm} + \SI{20}{\decibel} \\
+        P_{minrx}(dBm)' = \SI{10}{\dBm}
+    \end{gathered}
+\]
+
+Debido a que el amplificador se encuentra a la mitad de recorrido entre el transmisor y el
+receptor, las nuevas pérdidas en el cable son
+\[
+    \begin{gathered}
+        Perdidas' = \frac{\SI{0{,}8}{\decibel}}{\SI{100}{\metre}} \cdot
+        \SI{600}{\metre}\\[2mm]
+        Perdidas' = \SI{-4{,}8}{\decibel}
+    \end{gathered}
+\]
+
+Teniendo en cuenta que la potencia del transmisor es la mínima calculada en el ejercicio
+anterior (\SI{-0{,}4}{\dBm})
+\[
+    \begin{gathered}
+        P_{in}(dBm) = \SI{-0{,}4}{\dBm} - \SI{4{,}8}{\decibel} \\
+        P_{in}(dBm) = \SI{-5{,}2}{\dBm} \\
+        P_{in}(W) = 10^{\frac{\SI{-5{,}2}{\dBm} - 30}{10}} \\
+        P_{in}(W) = \SI{0{,}3}{\milli\watt}
+    \end{gathered}
+\]
+
+\[
+    \begin{gathered}
+        P_{out}(dBm) = P_{minrx} + Perdidas \\
+        P_{out}(dBm) = \SI{10}{\dBm} + \SI{4{,}8}{\decibel}  \\
+        P_{out}(dBm) = \SI{14{,}8}{\dBm} \\
+        P_{out}(W) = 10^{\frac{\SI{14{,}8}{\dBm} - 30}{10}} \\
+        P_{out}(W) = \SI{30{,}2}{\milli\watt}
+    \end{gathered}
+\]
+
+Es decir que la ganancia del amplificador debe ser
+\[
+    \begin{gathered}
+        G(dB) = 10\log_{10}
+        \left(\frac{\SI{30{,}2}{\milli\watt}}{\SI{0{,}3}{\milli\watt}}\right) \\[2mm]
+        \boxed{G(dB) = \SI{20{,}02}{\decibel}}
+    \end{gathered}
+\]
 
 %====================================
 \section*{11. Teniendo en cuenta el ejercicio anterior, calcular la sensibilidad mínima que
 debería tener el amplificador instalado en la mitad del enlace}
+Al ser un amplificador de \SI{20{,}02}{\decibel} y tener una potencia de salida de
+\SI{14{,}8}{\dBm}
+\[
+    \begin{gathered}
+        P_{outmin}(dBm) = \SI{14{,}8}{\dBm} - \SI{20{,}02}{\decibel}\\
+        \boxed{P_{outmin}(dBm) = Sensibilidad = \SI{-5{,}22}{\dBm}}
+    \end{gathered}
+\]
 
 %====================================
 \section*{12. Se vinculan a través de un cable de FO ADSS monomodo dos estaciones

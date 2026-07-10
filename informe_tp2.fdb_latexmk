@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1783566613.72597 "informe_tp2.tex" "informe_tp2.pdf" "informe_tp2" 1783566615.4956 0
+["lualatex"] 1783726483.05863 "informe_tp2.tex" "informe_tp2.pdf" "informe_tp2" 1783726484.9786 0
   "/home/hernan/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc" 1763963411.09375 128405 8efd8d82e21fb12232d020a8c2d685d7 ""
   "/home/hernan/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1763963408.45272 127322 7b3ec560cedc6cf6328543c6b83749ed ""
   "/home/hernan/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1763963408.88673 127665 e856b50f00b75da5ea516913e4088ea2 ""
@@ -47,6 +47,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1775001600 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
@@ -185,9 +186,9 @@
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1776114075 11873776 ad1a4b1a2adad44a414174108a12ef0b ""
   "caratula.tex" 1782700395.12591 2093 86b682271d839df4490b3a77569f41e0 ""
   "esquematico_pto7.pdf" 1782798133.37507 27415 639fe6c2806e595084b9442f1f7ad199 ""
-  "informe_tp2.aux" 1783566615.24572 1117 9d05442a2e75e00f68608cee594d553c "lualatex"
-  "informe_tp2.out" 1783566614.89849 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "informe_tp2.tex" 1783566612.30589 13890 8d43c67c05e7340f2c017571a92318de ""
+  "informe_tp2.aux" 1783726484.71062 1117 a23a4ee939e709ebfc8b80ba87fb1efe "lualatex"
+  "informe_tp2.out" 1783726484.27871 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "informe_tp2.tex" 1783726482.64854 15924 1fb55e55decfd3cd2c5c00397b255b1a ""
   "utn_logo.png" 1782687597.86851 2791 625497838bd0ea9e905be52a726beaa9 ""
   (generated)
   "informe_tp2.aux"
